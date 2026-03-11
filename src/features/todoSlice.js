@@ -14,6 +14,7 @@ export const counterSlice = createSlice({
     initialState,
     reducers:{
         addTodo: (state)=>{
+            if(!state.value.input.trim()) return
                state.value.arr.push(state.value.input)
                console.log(state.value.arr);      
         },
@@ -29,6 +30,7 @@ export const counterSlice = createSlice({
            },
 
              todoUpdate: (state) =>{
+             if(!state.value.input.trim()) return
                 let index = state.value.uIndex
                 state.value.arr[index] = state.value.input
                 state.value.isTrue = true
